@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CamSpam - AI-Powered Camera Roll Cleanup for iOS</title>
-    <meta name="description" content="CamSpam uses AI to automatically detect and clean up junk photos from your iPhone camera roll. Screenshots, receipts, and temporary photos - identified and scheduled for deletion.">
+    <title>CamSpam - AI Camera Roll Cleaner for iPhone</title>
+    <meta name="description" content="CamSpam uses AI to automatically detect and clean up junk photos from your iPhone. Screenshots, receipts, notes - gone. Keep the memories, lose the clutter.">
     <link rel="icon" type="image/png" href="assets/logo.png">
     <style>
         * {
@@ -17,8 +17,6 @@
             --red: #D94141;
             --red-hover: #E85555;
             --black: #000000;
-            --dark-gray: #0A0A0A;
-            --medium-gray: #1A1A1A;
             --text-gray: #888888;
             --text-light: #AAAAAA;
             --white: #FFFFFF;
@@ -30,425 +28,285 @@
             color: var(--white);
             line-height: 1.6;
             -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
         }
 
-        /* Header */
-        header {
-            padding: 20px 0;
-            position: sticky;
-            top: 0;
-            background: rgba(0, 0, 0, 0.8);
-            backdrop-filter: blur(10px);
-            z-index: 100;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-        }
-
-        nav {
+        .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 40px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            padding: 0 24px;
         }
 
-        .logo-header {
-            height: 40px;
-            width: auto;
-        }
-
-        .nav-cta {
-            background: var(--red);
-            color: var(--white);
-            padding: 10px 24px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 14px;
-            transition: background 0.2s;
-        }
-
-        .nav-cta:hover {
-            background: var(--red-hover);
-        }
-
-        /* Hero Section */
+        /* Hero */
         .hero {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 100px 40px 60px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
             text-align: center;
+            padding: 60px 24px;
+        }
+
+        .logo {
+            width: 280px;
+            height: auto;
+            margin-bottom: 48px;
         }
 
         .hero h1 {
-            font-size: 72px;
+            font-size: 56px;
             font-weight: 700;
-            letter-spacing: -2px;
+            letter-spacing: -1.5px;
             margin-bottom: 24px;
             line-height: 1.1;
         }
 
-        .hero .gradient-text {
-            background: linear-gradient(135deg, var(--white) 0%, var(--text-gray) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .hero .tagline {
-            font-size: 24px;
+        .hero p {
+            font-size: 22px;
             color: var(--text-light);
+            max-width: 600px;
             margin-bottom: 40px;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
+            line-height: 1.5;
         }
 
-        .hero-cta {
-            display: inline-flex;
-            align-items: center;
-            gap: 12px;
+        .cta {
+            display: inline-block;
             background: var(--red);
             color: var(--white);
-            padding: 18px 36px;
-            border-radius: 12px;
+            padding: 18px 40px;
+            border-radius: 50px;
             text-decoration: none;
             font-weight: 600;
             font-size: 18px;
             transition: all 0.2s;
-            margin-bottom: 80px;
         }
 
-        .hero-cta:hover {
+        .cta:hover {
             background: var(--red-hover);
-            transform: translateY(-2px);
-            box-shadow: 0 12px 40px rgba(217, 65, 65, 0.3);
+            transform: scale(1.02);
         }
 
-        /* Screenshots Section */
-        .screenshots {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 60px 40px;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-            align-items: start;
+        /* How it works */
+        .section {
+            padding: 120px 24px;
         }
 
-        .screenshot-card {
-            background: var(--medium-gray);
-            border-radius: 24px;
-            padding: 40px;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            transition: all 0.3s;
-        }
-
-        .screenshot-card:hover {
-            transform: translateY(-8px);
-            border-color: rgba(217, 65, 65, 0.3);
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
-        }
-
-        .screenshot-card img {
-            width: 100%;
-            height: auto;
-            border-radius: 16px;
-            margin-bottom: 24px;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
-        }
-
-        .screenshot-card h3 {
-            font-size: 24px;
-            font-weight: 600;
-            margin-bottom: 12px;
-            color: var(--white);
-        }
-
-        .screenshot-card p {
-            font-size: 16px;
-            color: var(--text-light);
-            line-height: 1.6;
-        }
-
-        /* Features Section */
-        .features {
-            max-width: 1200px;
-            margin: 100px auto;
-            padding: 0 40px;
-        }
-
-        .features h2 {
-            font-size: 48px;
+        .section-title {
+            font-size: 42px;
             font-weight: 700;
             text-align: center;
             margin-bottom: 80px;
             letter-spacing: -1px;
         }
 
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 48px;
-        }
-
-        .feature {
-            text-align: center;
-        }
-
-        .feature-icon {
-            width: 64px;
-            height: 64px;
-            background: var(--medium-gray);
-            border-radius: 16px;
+        /* Phone showcase */
+        .phone-section {
             display: flex;
             align-items: center;
-            justify-content: center;
-            margin: 0 auto 24px;
-            font-size: 32px;
-            border: 1px solid rgba(255, 255, 255, 0.05);
+            gap: 80px;
+            max-width: 1100px;
+            margin: 0 auto 140px;
         }
 
-        .feature h3 {
-            font-size: 22px;
-            font-weight: 600;
-            margin-bottom: 12px;
-            color: var(--white);
+        .phone-section:nth-child(even) {
+            flex-direction: row-reverse;
         }
 
-        .feature p {
-            font-size: 16px;
-            color: var(--text-light);
-            line-height: 1.6;
+        .phone-image {
+            flex: 0 0 320px;
         }
 
-        /* Privacy Banner */
-        .privacy-banner {
-            max-width: 800px;
-            margin: 100px auto;
-            padding: 48px;
-            background: linear-gradient(135deg, var(--medium-gray) 0%, var(--dark-gray) 100%);
-            border-radius: 24px;
-            text-align: center;
-            border: 1px solid rgba(217, 65, 65, 0.2);
-            margin-left: 40px;
-            margin-right: 40px;
+        .phone-image img {
+            width: 100%;
+            height: auto;
         }
 
-        .privacy-banner h2 {
+        .phone-content {
+            flex: 1;
+        }
+
+        .phone-content h2 {
             font-size: 36px;
             font-weight: 700;
-            margin-bottom: 16px;
-            color: var(--red);
+            margin-bottom: 20px;
+            letter-spacing: -0.5px;
         }
 
-        .privacy-banner p {
-            font-size: 18px;
+        .phone-content p {
+            font-size: 20px;
             color: var(--text-light);
             line-height: 1.6;
+        }
+
+        /* What is CamSpam */
+        .what-section {
+            background: linear-gradient(180deg, #0a0a0a 0%, #000 100%);
+            padding: 120px 24px;
+        }
+
+        .what-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .what-content h2 {
+            font-size: 42px;
+            font-weight: 700;
+            margin-bottom: 32px;
+            letter-spacing: -1px;
+        }
+
+        .what-content p {
+            font-size: 20px;
+            color: var(--text-light);
+            line-height: 1.8;
+            margin-bottom: 24px;
+        }
+
+        .what-content .highlight {
+            color: var(--red);
+            font-weight: 600;
         }
 
         /* Footer */
         footer {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 80px 40px 40px;
+            padding: 80px 24px;
             text-align: center;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            border-top: 1px solid rgba(255,255,255,0.1);
         }
 
         footer .logo-footer {
-            height: 60px;
-            width: auto;
-            margin-bottom: 24px;
-            opacity: 0.6;
+            width: 120px;
+            height: auto;
+            margin-bottom: 32px;
+            opacity: 0.5;
         }
 
         footer p {
             color: var(--text-gray);
-            font-size: 14px;
-            margin-bottom: 16px;
+            font-size: 15px;
+            margin-bottom: 12px;
         }
 
         footer a {
-            color: var(--red);
+            color: var(--text-light);
             text-decoration: none;
-            transition: color 0.2s;
         }
 
         footer a:hover {
-            color: var(--red-hover);
+            color: var(--white);
         }
 
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 48px;
+        /* Responsive */
+        @media (max-width: 900px) {
+            .phone-section {
+                flex-direction: column !important;
+                text-align: center;
+                gap: 48px;
+                margin-bottom: 100px;
             }
 
-            .hero .tagline {
-                font-size: 20px;
-            }
-
-            .hero-cta {
-                font-size: 16px;
-                padding: 16px 32px;
-            }
-
-            .screenshots {
-                grid-template-columns: 1fr;
-                gap: 32px;
-            }
-
-            .features h2 {
-                font-size: 36px;
-            }
-
-            .features-grid {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
-
-            .privacy-banner {
-                padding: 32px 24px;
-                margin-left: 20px;
-                margin-right: 20px;
-            }
-
-            .privacy-banner h2 {
-                font-size: 28px;
-            }
-
-            .privacy-banner p {
-                font-size: 16px;
-            }
-
-            nav {
-                padding: 0 20px;
-            }
-
-            .hero {
-                padding: 60px 20px 40px;
-            }
-
-            .features {
-                padding: 0 20px;
-            }
-
-            footer {
-                padding: 60px 20px 40px;
+            .phone-image {
+                flex: none;
+                width: 260px;
             }
         }
 
-        @media (max-width: 480px) {
+        @media (max-width: 600px) {
+            .logo {
+                width: 200px;
+            }
+
             .hero h1 {
                 font-size: 36px;
             }
 
-            .hero .tagline {
+            .hero p {
                 font-size: 18px;
             }
 
-            .screenshot-card {
-                padding: 24px;
+            .section-title {
+                font-size: 32px;
             }
 
-            .screenshot-card h3 {
-                font-size: 20px;
+            .phone-content h2 {
+                font-size: 28px;
+            }
+
+            .phone-content p {
+                font-size: 17px;
+            }
+
+            .what-content h2 {
+                font-size: 32px;
+            }
+
+            .what-content p {
+                font-size: 17px;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
-    <header>
-        <nav>
-            <img src="assets/logo.png" alt="CamSpam" class="logo-header">
-            <a href="https://apps.apple.com/app/camspam" class="nav-cta">Download</a>
-        </nav>
-    </header>
-
-    <!-- Hero Section -->
+    <!-- Hero -->
     <section class="hero">
-        <h1>
-            <span class="gradient-text">Clean your camera roll</span><br>
-            automatically
-        </h1>
-        <p class="tagline">
-            AI-powered cleanup for your iPhone. Detect screenshots, receipts, and junk photos. Review and delete with a tap.
-        </p>
-        <a href="https://apps.apple.com/app/camspam" class="hero-cta">
-            <span>Download on the App Store</span>
-        </a>
+        <img src="assets/logo.png" alt="CamSpam" class="logo">
+        <h1>Your camera roll, decluttered</h1>
+        <p>CamSpam uses AI to find and remove the junk photos filling up your iPhone. Screenshots, receipts, notes, random snaps — automatically detected and cleaned up.</p>
+        <a href="https://apps.apple.com/app/camspam" class="cta">Download for iPhone</a>
+    </section>
 
-        <!-- Screenshots Grid -->
-        <div class="screenshots">
-            <div class="screenshot-card">
-                <img src="assets/screenshot-spam-detected.png" alt="Spam Detection">
-                <h3>Smart Detection</h3>
-                <p>AI identifies screenshots, receipts, notes, and other temporary photos automatically.</p>
-            </div>
-
-            <div class="screenshot-card">
-                <img src="assets/screenshot-gallery.png" alt="Review Gallery">
-                <h3>Review Before Delete</h3>
-                <p>See exactly what will be deleted with countdown timers. Rescue anything you want to keep.</p>
-            </div>
-
-            <div class="screenshot-card">
-                <img src="assets/screenshot-camera.png" alt="Quick Capture">
-                <h3>Quick Capture Widget</h3>
-                <p>Take temporary photos from your home screen. Auto-deleted after 7 days.</p>
-            </div>
+    <!-- What is CamSpam -->
+    <section class="what-section">
+        <div class="what-content">
+            <h2>What is CamSpam?</h2>
+            <p>Your camera roll is full of photos you'll never look at again. Screenshots you took once. Receipts for returns. Notes from whiteboards. Photos of parking spots. <span class="highlight">That's camera spam.</span></p>
+            <p>CamSpam scans your camera roll with on-device AI, identifies these throwaway photos, and schedules them for deletion. You review what it finds, rescue anything you want to keep, and let the rest go.</p>
+            <p><span class="highlight">All processing happens on your iPhone.</span> Your photos never leave your device. No cloud, no servers, no data collection.</p>
         </div>
     </section>
 
-    <!-- Features Section -->
-    <section class="features">
-        <h2>Everything you need, nothing you don't</h2>
-        <div class="features-grid">
-            <div class="feature">
-                <div class="feature-icon">🤖</div>
-                <h3>AI-Powered Detection</h3>
-                <p>Advanced on-device AI identifies screenshots, receipts, notes, and other junk photos that clutter your camera roll.</p>
-            </div>
+    <!-- Features with phones -->
+    <section class="section">
+        <h2 class="section-title">How it works</h2>
 
-            <div class="feature">
-                <div class="feature-icon">✅</div>
-                <h3>You're in Control</h3>
-                <p>Nothing gets deleted without your approval. Review detected photos and rescue the ones you want to keep.</p>
+        <div class="phone-section">
+            <div class="phone-image">
+                <img src="assets/screenshot-spam-detected.png" alt="Spam detected notification">
             </div>
-
-            <div class="feature">
-                <div class="feature-icon">⚡</div>
-                <h3>Quick Capture</h3>
-                <p>Home screen widget for taking temporary photos. They're automatically marked for cleanup - no manual sorting.</p>
-            </div>
-
-            <div class="feature">
-                <div class="feature-icon">🔒</div>
-                <h3>Privacy First</h3>
-                <p>All AI processing happens on your device. Your photos never leave your phone. No cloud, no tracking.</p>
+            <div class="phone-content">
+                <h2>AI finds the junk</h2>
+                <p>CamSpam automatically scans your camera roll and identifies photos that look like spam — screenshots, documents, receipts, QR codes, and other temporary photos. When it finds something, you get a notification to review.</p>
             </div>
         </div>
-    </section>
 
-    <!-- Privacy Banner -->
-    <section class="privacy-banner">
-        <h2>Your photos stay on your phone</h2>
-        <p>
-            CamSpam processes everything locally on your device using on-device machine learning.
-            No cloud uploads, no servers, no data collection. What happens on your phone, stays on your phone.
-        </p>
+        <div class="phone-section">
+            <div class="phone-image">
+                <img src="assets/screenshot-folders.png" alt="Organized folders">
+            </div>
+            <div class="phone-content">
+                <h2>Organized by type</h2>
+                <p>Detected photos are automatically sorted into folders — Receipts, Screenshots, Documents, and more. Each photo shows a countdown timer until deletion. Tap any photo to rescue it or let it expire.</p>
+            </div>
+        </div>
+
+        <div class="phone-section">
+            <div class="phone-image">
+                <img src="assets/screenshot-settings.png" alt="Settings and features">
+            </div>
+            <div class="phone-content">
+                <h2>Powerful features</h2>
+                <p>Auto AI Detection scans your camera roll automatically. Auto Cam Roll Cleaner removes expired photos. Auto-Sort Folders keeps everything organized. Add a home screen widget to capture temporary photos that auto-delete.</p>
+            </div>
+        </div>
     </section>
 
     <!-- Footer -->
     <footer>
         <img src="assets/logo.png" alt="CamSpam" class="logo-footer">
-        <p>Questions or feedback?</p>
-        <p><a href="mailto:support@camspam.app">support@camspam.app</a></p>
-        <p style="margin-top: 32px; opacity: 0.5;">© 2026 CamSpam. All rights reserved.</p>
+        <p>Questions? <a href="mailto:support@camspam.app">support@camspam.app</a></p>
+        <p style="margin-top: 24px; opacity: 0.5;">&copy; 2025 CamSpam</p>
     </footer>
 </body>
 </html>
