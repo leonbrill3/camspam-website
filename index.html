@@ -30,12 +30,6 @@
             -webkit-font-smoothing: antialiased;
         }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 24px;
-        }
-
         /* Hero */
         .hero {
             min-height: 100vh;
@@ -86,7 +80,63 @@
             transform: scale(1.02);
         }
 
-        /* How it works */
+        /* What is CamSpam - Numbered Steps */
+        .what-section {
+            background: linear-gradient(180deg, #0a0a0a 0%, #000 100%);
+            padding: 120px 24px;
+        }
+
+        .what-section h2 {
+            font-size: 42px;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 80px;
+            letter-spacing: -1px;
+        }
+
+        .steps-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .step {
+            display: grid;
+            grid-template-columns: 80px 1fr;
+            gap: 32px;
+            margin-bottom: 56px;
+            align-items: start;
+        }
+
+        .step:last-child {
+            margin-bottom: 0;
+        }
+
+        .step-number {
+            font-size: 48px;
+            font-weight: 700;
+            color: var(--red);
+            line-height: 1;
+        }
+
+        .step-content h3 {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .step-content p {
+            font-size: 19px;
+            line-height: 1.7;
+            color: #ccc;
+        }
+
+        .step-content strong {
+            color: #fff;
+        }
+
+        /* How it works - Phone sections */
         .section {
             padding: 120px 24px;
         }
@@ -99,7 +149,6 @@
             letter-spacing: -1px;
         }
 
-        /* Phone showcase */
         .phone-section {
             display: flex;
             align-items: center;
@@ -136,37 +185,6 @@
             font-size: 20px;
             color: var(--text-light);
             line-height: 1.6;
-        }
-
-        /* What is CamSpam */
-        .what-section {
-            background: linear-gradient(180deg, #0a0a0a 0%, #000 100%);
-            padding: 120px 24px;
-        }
-
-        .what-content {
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .what-content h2 {
-            font-size: 42px;
-            font-weight: 700;
-            margin-bottom: 32px;
-            letter-spacing: -1px;
-        }
-
-        .what-content p {
-            font-size: 20px;
-            color: var(--text-light);
-            line-height: 1.8;
-            margin-bottom: 24px;
-        }
-
-        .what-content .highlight {
-            color: var(--red);
-            font-weight: 600;
         }
 
         /* Footer */
@@ -226,6 +244,27 @@
                 font-size: 18px;
             }
 
+            .what-section h2 {
+                font-size: 32px;
+            }
+
+            .step {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+
+            .step-number {
+                font-size: 36px;
+            }
+
+            .step-content h3 {
+                font-size: 20px;
+            }
+
+            .step-content p {
+                font-size: 17px;
+            }
+
             .section-title {
                 font-size: 32px;
             }
@@ -235,14 +274,6 @@
             }
 
             .phone-content p {
-                font-size: 17px;
-            }
-
-            .what-content h2 {
-                font-size: 32px;
-            }
-
-            .what-content p {
                 font-size: 17px;
             }
         }
@@ -257,14 +288,42 @@
         <a href="https://apps.apple.com/app/camspam" class="cta">Download for iPhone</a>
     </section>
 
-    <!-- What is CamSpam -->
+    <!-- What is CamSpam - Numbered Steps -->
     <section class="what-section">
-        <div class="what-content">
-            <h2>What is CamSpam?</h2>
-            <p>Your camera roll is full of photos you'll never look at again. Screenshots you took once. Receipts for returns. Notes from whiteboards. Photos of parking spots. <span class="highlight">That's camera spam.</span></p>
-            <p>CamSpam scans your camera roll with on-device AI and identifies these throwaway photos. <span class="highlight">Nothing is ever deleted without your approval.</span> Detected photos are moved to the CamSpam gallery where you can review them, rescue anything you want to keep, and let the rest expire.</p>
-            <p>Even better — use the <span class="highlight">built-in CamSpam camera</span> to take temporary photos that never touch your camera roll in the first place. Receipts, parking spots, whiteboards — shoot and forget.</p>
-            <p><span class="highlight">Your photos are always safe.</span> Search your spam by type, sync across devices, and stay organized automatically.</p>
+        <h2>What is CamSpam?</h2>
+
+        <div class="steps-container">
+            <div class="step">
+                <div class="step-number">01</div>
+                <div class="step-content">
+                    <h3>Camera Spam</h3>
+                    <p>Your camera roll is full of photos you'll never look at again. Screenshots, receipts, whiteboard notes, parking spots. <strong>That's camera spam.</strong></p>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-number">02</div>
+                <div class="step-content">
+                    <h3>AI Cleanup</h3>
+                    <p>CamSpam scans your camera roll with AI and moves throwaway photos to a safe gallery. Review them, rescue what you want, let the rest expire. <strong>Nothing deleted without approval.</strong></p>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-number">03</div>
+                <div class="step-content">
+                    <h3>Built-in Camera</h3>
+                    <p>Take temporary photos that never touch your camera roll. Receipts, parking spots, whiteboards — <strong>shoot and forget.</strong></p>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-number">04</div>
+                <div class="step-content">
+                    <h3>Stay Organized</h3>
+                    <p>Search by type. Sync across devices. Auto-sort into folders. <strong>Your photos are always safe.</strong></p>
+                </div>
+            </div>
         </div>
     </section>
 
