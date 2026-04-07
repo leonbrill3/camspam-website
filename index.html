@@ -319,6 +319,20 @@
             }
         }
     </style>
+    <script>
+        // Logo rotation on scroll
+        document.addEventListener('DOMContentLoaded', function() {
+            const logo = document.querySelector('.logo');
+            let lastScrollY = 0;
+
+            window.addEventListener('scroll', function() {
+                const scrollY = window.scrollY;
+                const rotation = scrollY * 0.5; // Adjust speed with multiplier
+                logo.style.transform = `rotate(${rotation}deg)`;
+                lastScrollY = scrollY;
+            });
+        });
+    </script>
 </head>
 <body>
     <!-- Hero -->
