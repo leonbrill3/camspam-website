@@ -218,15 +218,32 @@
         /* Responsive */
         @media (max-width: 900px) {
             .phone-section {
-                flex-direction: column !important;
+                display: grid;
+                grid-template-areas:
+                    "header"
+                    "image"
+                    "description";
                 text-align: center;
-                gap: 48px;
-                margin-bottom: 4px;
+                gap: 24px;
+                margin-bottom: 60px;
             }
 
             .phone-image {
-                flex: none;
+                grid-area: image;
                 width: 260px;
+                margin: 0 auto;
+            }
+
+            .phone-content {
+                display: contents;
+            }
+
+            .phone-content h2 {
+                grid-area: header;
+            }
+
+            .phone-content p {
+                grid-area: description;
             }
         }
 
