@@ -43,6 +43,26 @@
             background: radial-gradient(ellipse at center top, rgba(217, 65, 65, 0.15) 0%, transparent 60%);
         }
 
+        .logo-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 48px;
+        }
+
+        .logo-wheel {
+            width: 180px;
+            height: auto;
+            filter: drop-shadow(0 0 30px rgba(217, 65, 65, 0.5)) drop-shadow(0 0 60px rgba(217, 65, 65, 0.3));
+            transition: transform 0.1s ease-out;
+        }
+
+        .logo-wordmark {
+            width: 200px;
+            height: auto;
+            margin-top: 16px;
+        }
+
         .logo {
             width: 280px;
             height: auto;
@@ -328,16 +348,14 @@
         }
     </style>
     <script>
-        // Logo rotation on scroll
+        // Logo wheel rotation on scroll
         document.addEventListener('DOMContentLoaded', function() {
-            const logo = document.querySelector('.logo');
-            let lastScrollY = 0;
+            const logoWheel = document.querySelector('.logo-wheel');
 
             window.addEventListener('scroll', function() {
                 const scrollY = window.scrollY;
                 const rotation = scrollY * 0.5; // Adjust speed with multiplier
-                logo.style.transform = `rotate(${rotation}deg)`;
-                lastScrollY = scrollY;
+                logoWheel.style.transform = `rotate(${rotation}deg)`;
             });
         });
     </script>
@@ -345,7 +363,10 @@
 <body>
     <!-- Hero -->
     <section class="hero">
-        <img src="assets/logo.png" alt="CamSpam" class="logo">
+        <div class="logo-container">
+            <img src="assets/logo-wheel.png" alt="CamSpam" class="logo-wheel">
+            <img src="assets/logo-wordmark.png" alt="CamSpam" class="logo-wordmark">
+        </div>
         <h1>Your camera roll, decluttered</h1>
         <p>CamSpam uses AI to find and clean up junk photos from your iPhone. Plus a built-in camera for temporary photos that never clutter your camera roll in the first place.</p>
         <a href="https://apps.apple.com/app/camspam" class="cta">Download for iPhone</a>
