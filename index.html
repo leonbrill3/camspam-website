@@ -16,6 +16,7 @@
         :root {
             --red: #D94141;
             --red-hover: #E85555;
+            --red-glow: rgba(217, 65, 65, 0.4);
             --black: #000000;
             --text-gray: #888888;
             --text-light: #AAAAAA;
@@ -24,10 +25,11 @@
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            background-color: var(--black);
+            background: linear-gradient(180deg, #000000 0%, #0a0a0a 50%, #111111 100%);
             color: var(--white);
             line-height: 1.6;
             -webkit-font-smoothing: antialiased;
+            min-height: 100vh;
         }
 
         /* Hero */
@@ -38,12 +40,14 @@
             justify-content: center;
             text-align: center;
             padding: 80px 24px 120px;
+            background: radial-gradient(ellipse at center top, rgba(217, 65, 65, 0.15) 0%, transparent 60%);
         }
 
         .logo {
             width: 280px;
             height: auto;
             margin-bottom: 48px;
+            filter: drop-shadow(0 0 30px rgba(217, 65, 65, 0.5)) drop-shadow(0 0 60px rgba(217, 65, 65, 0.3));
         }
 
         .hero h1 {
@@ -52,6 +56,7 @@
             letter-spacing: -1.5px;
             margin-bottom: 24px;
             line-height: 1.1;
+            text-shadow: 0 0 40px rgba(255, 255, 255, 0.1);
         }
 
         .hero p {
@@ -81,7 +86,7 @@
 
         /* What is CamSpam - Numbered Steps */
         .what-section {
-            background: linear-gradient(180deg, #0a0a0a 0%, #000 100%);
+            background: linear-gradient(180deg, #0d0d0d 0%, #080808 100%);
             padding: 48px 24px 120px;
         }
 
@@ -91,6 +96,7 @@
             text-align: center;
             margin-bottom: 80px;
             letter-spacing: -1px;
+            text-shadow: 0 0 30px rgba(217, 65, 65, 0.3);
         }
 
         .steps-container {
@@ -138,6 +144,7 @@
         /* How it works - Phone sections */
         .section {
             padding: 48px 24px 120px;
+            background: linear-gradient(180deg, #0a0a0a 0%, #0f0f0f 50%, #0a0a0a 100%);
         }
 
         .section-title {
@@ -146,6 +153,7 @@
             text-align: center;
             margin-bottom: 80px;
             letter-spacing: -1px;
+            text-shadow: 0 0 30px rgba(217, 65, 65, 0.3);
         }
 
         .phone-section {
@@ -178,6 +186,21 @@
             font-weight: 700;
             margin-bottom: 20px;
             letter-spacing: -0.5px;
+            text-shadow: 0 0 20px rgba(217, 65, 65, 0.25);
+            position: relative;
+        }
+
+        .phone-content h2::before {
+            content: '';
+            position: absolute;
+            left: -20px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 4px;
+            height: 70%;
+            background: linear-gradient(180deg, var(--red) 0%, transparent 100%);
+            border-radius: 2px;
+            box-shadow: 0 0 10px var(--red-glow);
         }
 
         .phone-content p {
@@ -190,29 +213,31 @@
         footer {
             padding: 80px 24px;
             text-align: center;
-            border-top: 1px solid rgba(255,255,255,0.1);
+            border-top: 1px solid rgba(255,255,255,0.15);
+            background: linear-gradient(180deg, #0a0a0a 0%, #050505 100%);
         }
 
         footer .logo-footer {
             width: 120px;
             height: auto;
             margin-bottom: 32px;
-            opacity: 0.5;
+            opacity: 0.8;
+            filter: drop-shadow(0 0 15px rgba(217, 65, 65, 0.3));
         }
 
         footer p {
-            color: var(--text-gray);
+            color: #bbbbbb;
             font-size: 15px;
             margin-bottom: 12px;
         }
 
         footer a {
-            color: var(--text-light);
+            color: var(--white);
             text-decoration: none;
         }
 
         footer a:hover {
-            color: var(--white);
+            color: var(--red);
         }
 
         /* Responsive */
@@ -382,7 +407,7 @@
     <footer>
         <img src="assets/logo.png" alt="CamSpam" class="logo-footer">
         <p>Questions? <a href="mailto:support@camspam.com">support@camspam.com</a></p>
-        <p style="margin-top: 24px; opacity: 0.5;">&copy; 2025 CamSpam</p>
+        <p style="margin-top: 24px; opacity: 0.7;">&copy; 2025 CamSpam</p>
     </footer>
 </body>
 </html>
