@@ -4,206 +4,192 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Privacy Policy - CamSpam</title>
-    <meta name="description" content="CamSpam Privacy Policy - Learn how we protect your data and privacy.">
-    <link rel="icon" type="image/png" href="assets/logo.png">
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
-        :root {
-            --red: #D94141;
-            --black: #000000;
-            --text-gray: #888888;
-            --text-light: #AAAAAA;
-            --white: #FFFFFF;
-        }
-
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            background: linear-gradient(180deg, #000000 0%, #0a0a0a 50%, #111111 100%);
-            color: var(--white);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
             line-height: 1.6;
-            -webkit-font-smoothing: antialiased;
-            min-height: 100vh;
+            color: #333;
+            background: #f5f5f7;
+            padding: 20px;
         }
-
-        header {
-            padding: 40px 24px;
-            text-align: center;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-        }
-
-        header a {
-            display: inline-block;
-        }
-
-        header img {
-            width: 80px;
-            height: auto;
-            filter: drop-shadow(0 0 15px rgba(217, 65, 65, 0.4));
-        }
-
-        main {
+        .container {
             max-width: 800px;
             margin: 0 auto;
-            padding: 60px 24px 120px;
+            background: white;
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
         }
-
         h1 {
-            font-size: 42px;
-            font-weight: 700;
-            margin-bottom: 16px;
-            letter-spacing: -1px;
+            font-size: 2rem;
+            margin-bottom: 10px;
+            color: #1a1a1a;
         }
-
-        .last-updated {
-            color: var(--text-gray);
-            font-size: 14px;
-            margin-bottom: 48px;
+        .updated {
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 0.9rem;
         }
-
         h2 {
-            font-size: 24px;
-            font-weight: 600;
-            margin-top: 40px;
-            margin-bottom: 16px;
-            color: var(--red);
+            font-size: 1.3rem;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            color: #1a1a1a;
         }
-
-        p {
-            font-size: 17px;
-            color: #cccccc;
-            margin-bottom: 16px;
-            line-height: 1.7;
+        p, li {
+            margin-bottom: 12px;
+            color: #444;
         }
-
         ul {
-            margin-bottom: 16px;
-            padding-left: 24px;
+            margin-left: 20px;
+            margin-bottom: 15px;
         }
-
-        li {
-            font-size: 17px;
-            color: #cccccc;
-            margin-bottom: 8px;
-            line-height: 1.7;
-        }
-
         a {
-            color: var(--red);
+            color: #007AFF;
             text-decoration: none;
         }
-
         a:hover {
             text-decoration: underline;
         }
-
-        footer {
-            padding: 40px 24px;
-            text-align: center;
-            border-top: 1px solid rgba(255,255,255,0.1);
+        .highlight {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 0 8px 8px 0;
         }
-
-        footer p {
-            color: #888888;
-            font-size: 14px;
-        }
-
-        footer a {
-            color: var(--white);
+        .important {
+            background: #e8f4fd;
+            border-left: 4px solid #007AFF;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 0 8px 8px 0;
         }
     </style>
 </head>
 <body>
-    <header>
-        <a href="/">
-            <img src="assets/logo.png" alt="CamSpam">
-        </a>
-    </header>
-
-    <main>
+    <div class="container">
         <h1>Privacy Policy</h1>
-        <p class="last-updated">Last updated: April 6, 2026</p>
+        <p class="updated">Last Updated: April 9, 2026</p>
 
-        <p>CamSpam ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, and safeguard your information when you use our mobile application.</p>
+        <p>At CamSpam, we are committed to protecting your privacy. This Privacy Policy explains how we collect, use, and safeguard your information when you use our mobile application.</p>
 
-        <h2>Information We Collect</h2>
-        <p><strong>Photos and Camera Data:</strong> CamSpam accesses your device's camera and photo library to provide its core functionality. This includes:</p>
+        <h2>Overview</h2>
+        <p>CamSpam is designed with privacy in mind. Your photos are your personal data, and we take their protection seriously. This policy covers what data we access, how we process it, and your rights regarding your information.</p>
+
+        <h2>Information We Access</h2>
+        <p>CamSpam accesses the following information on your device:</p>
         <ul>
-            <li>Photos you capture using the CamSpam camera</li>
-            <li>Photos from your camera roll that you choose to scan for cleanup</li>
-            <li>Image metadata (such as date taken) to organize and categorize photos</li>
+            <li><strong>Camera:</strong> To capture photos directly within the app</li>
+            <li><strong>Photo Library:</strong> To scan and organize your existing photos</li>
+            <li><strong>Photo Metadata:</strong> Capture dates, file types, and dimensions for organization purposes</li>
         </ul>
 
-        <p><strong>On-Device Processing:</strong> All photo analysis and AI processing happens entirely on your device. Your photos are never uploaded to our servers or any third-party servers.</p>
-
-        <h2>How We Use Your Information</h2>
-        <p>We use the information we access solely to:</p>
+        <h2>AI-Powered Photo Classification</h2>
+        <div class="important">
+            <strong>How AI Classification Works:</strong>
+            <p style="margin-top: 10px;">When you enable AI classification, your photos are securely transmitted to our AI service provider for analysis. The AI examines each photo to determine if it's a temporary "spam" photo (screenshot, receipt, document, etc.) or a meaningful memory.</p>
+        </div>
+        
+        <p><strong>Key points about AI processing:</strong></p>
         <ul>
-            <li>Analyze photos on your device to identify potential spam or temporary photos</li>
-            <li>Organize photos into categories (screenshots, receipts, documents, etc.)</li>
-            <li>Enable search functionality within the app</li>
-            <li>Manage photo expiration timers you set</li>
+            <li>Photos are transmitted securely using encryption</li>
+            <li>Photos are processed in real-time and immediately discarded after classification</li>
+            <li>Photos are NOT stored on external servers</li>
+            <li>Photos are NOT used to train AI models</li>
+            <li>You can disable AI classification at any time in Settings</li>
+            <li>With AI disabled, the app uses basic on-device analysis with reduced accuracy</li>
         </ul>
 
         <h2>Data Storage</h2>
-        <p><strong>Local Storage Only:</strong> All photos managed by CamSpam are stored locally on your device. We do not upload, transmit, or store your photos on any external servers.</p>
-        <p><strong>No Cloud Sync:</strong> CamSpam does not sync your photos to cloud services. Your photos remain on your device unless you explicitly choose to export or share them.</p>
+        <p><strong>Local Storage:</strong> All photos managed by CamSpam are stored locally on your device in the app's private storage area. Photos moved to CamSpam remain on your device only.</p>
+        <p><strong>No Cloud Sync:</strong> CamSpam does not upload your photos to cloud storage. There is no account system or cloud backup feature.</p>
 
-        <h2>Data Sharing</h2>
-        <p>We do not sell, trade, or otherwise transfer your personal information or photos to third parties. Your photos and data remain private and under your control at all times.</p>
-
-        <h2>Analytics</h2>
-        <p>We may collect anonymous usage analytics to improve the app, such as:</p>
+        <h2>Analytics and Crash Reporting</h2>
+        <p>We collect anonymous usage data to improve the app:</p>
         <ul>
-            <li>App crash reports</li>
-            <li>Feature usage statistics (not linked to photos or personal data)</li>
-            <li>Device type and iOS version</li>
+            <li><strong>Usage Analytics:</strong> Feature usage, app performance metrics, and general usage patterns (via Amplitude)</li>
+            <li><strong>Crash Reports:</strong> Error logs and crash data to identify and fix bugs (via Sentry)</li>
+            <li><strong>Install Attribution:</strong> How you discovered CamSpam (via AppsFlyer)</li>
         </ul>
-        <p>This data is anonymized and cannot be used to identify you or access your photos.</p>
+        
+        <div class="highlight">
+            <strong>Your Choice:</strong> You can opt out of analytics tracking at any time in the app's Settings. When you opt out, no usage data is collected.
+        </div>
+
+        <p>Analytics data does NOT include:</p>
+        <ul>
+            <li>Your actual photos or their contents</li>
+            <li>Photo metadata or personal information</li>
+            <li>Precise location data</li>
+        </ul>
 
         <h2>Third-Party Services</h2>
-        <p>CamSpam may use the following third-party services:</p>
+        <p>CamSpam uses the following third-party services:</p>
         <ul>
-            <li><strong>Apple's Core ML:</strong> For on-device image analysis (no data leaves your device)</li>
-            <li><strong>Sentry:</strong> For crash reporting and error tracking (no photo data is shared)</li>
-            <li><strong>AppsFlyer:</strong> For anonymous install attribution analytics</li>
+            <li><strong>AI Service Provider:</strong> For photo classification (when enabled)</li>
+            <li><strong>Amplitude:</strong> For anonymous usage analytics</li>
+            <li><strong>Sentry:</strong> For crash reporting and error tracking</li>
+            <li><strong>AppsFlyer:</strong> For install attribution</li>
+            <li><strong>Apple App Store:</strong> For subscription billing</li>
+        </ul>
+        <p>Each service operates under its own privacy policy and is contractually prohibited from accessing your photos.</p>
+
+        <h2>Data Sharing</h2>
+        <p>We do NOT sell, rent, or share your personal data or photos with third parties for marketing purposes. Data is only shared as described in this policy (analytics, crash reporting) and only in anonymized form.</p>
+
+        <h2>Data Retention</h2>
+        <ul>
+            <li><strong>Photos:</strong> Retained on your device until you delete them or they auto-delete based on your chosen schedule</li>
+            <li><strong>Analytics:</strong> Retained for up to 12 months in anonymized form</li>
+            <li><strong>Crash Reports:</strong> Retained for up to 90 days</li>
         </ul>
 
         <h2>Your Rights</h2>
         <p>You have the right to:</p>
         <ul>
-            <li>Revoke camera and photo library permissions at any time through iOS Settings</li>
-            <li>Delete all data by uninstalling the app</li>
-            <li>Request information about what data we process</li>
+            <li>Access and export your data from the app</li>
+            <li>Delete your data by uninstalling the app</li>
+            <li>Opt out of analytics tracking in Settings</li>
+            <li>Disable AI classification in Settings</li>
+            <li>Revoke camera and photo library permissions via iOS Settings</li>
+            <li>Request information about data processing by contacting us</li>
         </ul>
 
         <h2>Children's Privacy</h2>
-        <p>CamSpam is not intended for children under 13 years of age. We do not knowingly collect personal information from children under 13.</p>
+        <p>CamSpam is not intended for children under 13 years of age. We do not knowingly collect personal information from children under 13. If you are a parent or guardian and believe your child has provided us with personal information, please contact us.</p>
 
-        <h2>Security</h2>
-        <p>We implement appropriate technical measures to protect your data. Since all photo processing occurs on-device and we do not transmit your photos, your data benefits from iOS's built-in security features including device encryption.</p>
-
-        <h2>Changes to This Policy</h2>
-        <p>We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the "Last updated" date.</p>
-
-        <h2>Contact Us</h2>
-        <p>If you have questions about this Privacy Policy or our practices, please contact us at:</p>
-        <p><a href="mailto:support@camspam.com">support@camspam.com</a></p>
-
-        <h2>California Privacy Rights</h2>
-        <p>If you are a California resident, you have additional rights under the California Consumer Privacy Act (CCPA). Since we do not sell personal information and process photos only on-device, most CCPA requirements are inherently satisfied by our privacy-first design.</p>
+        <h2>California Privacy Rights (CCPA)</h2>
+        <p>If you are a California resident, you have additional rights under the California Consumer Privacy Act:</p>
+        <ul>
+            <li>Right to know what personal information is collected</li>
+            <li>Right to delete personal information</li>
+            <li>Right to opt-out of the sale of personal information (we do not sell data)</li>
+            <li>Right to non-discrimination for exercising your rights</li>
+        </ul>
 
         <h2>International Users</h2>
-        <p>CamSpam is operated from the United States. If you are accessing the app from outside the United States, please be aware that your information may be processed in the United States. By using the app, you consent to this processing.</p>
-    </main>
+        <p>If you are accessing CamSpam from outside the United States, please be aware that your information may be processed in the United States where our servers and third-party service providers are located.</p>
 
-    <footer>
-        <p><a href="/">Back to CamSpam</a> | <a href="mailto:support@camspam.com">Contact</a></p>
-        <p style="margin-top: 16px; opacity: 0.7;">&copy; 2026 CamSpam. All rights reserved.</p>
-    </footer>
+        <h2>Security</h2>
+        <p>We implement appropriate technical and organizational measures to protect your data, including:</p>
+        <ul>
+            <li>Encryption of data in transit (HTTPS/TLS)</li>
+            <li>Secure storage on your device using iOS data protection</li>
+            <li>No persistent storage of photos on external servers</li>
+        </ul>
+
+        <h2>Changes to This Policy</h2>
+        <p>We may update this Privacy Policy from time to time. We will notify you of any material changes by updating the "Last Updated" date and, where appropriate, through in-app notifications.</p>
+
+        <h2>Contact Us</h2>
+        <p>If you have questions about this Privacy Policy or our data practices, please contact us:</p>
+        <p>Email: <a href="mailto:support@camspam.com">support@camspam.com</a></p>
+    </div>
 </body>
 </html>
